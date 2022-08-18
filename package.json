@@ -1,0 +1,15 @@
+{
+  "name": "pca9685",
+  "version": "1.0.0",
+  "description": "PCA9685 PWM Driver",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gianluca Cornetta",
+  "license": "MIT",
+  "dependencies": {
+    "i2c-bus": "^5.2.2",
+    "sleep": "^6.3.0"
+  }
+}
