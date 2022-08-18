@@ -3,7 +3,7 @@ This is the PCA9686 driver for the  **self-parking car**. This software is part 
 
 ## Usage
 To use this driver in your application follow the steps depicted in the sequel:
-1. clone this repo typing `git clone https://github.com/gcornetta/rpi-car-test-server`.
+1. clone this repo typing `git clone https://github.com/gcornetta/PCA9685.git`.
 2. copy the `PCA9685` folder in your project.
 3. update your `package.json` file with the driver dependencies and type `npm install` to install the new packages.
 
