@@ -8,9 +8,12 @@ To use this driver in your application follow the steps depicted in the sequel:
 3. update your `package.json` file with the driver dependencies and type `npm install` to install the new packages.
 
 Include the driver in your application:
+
+```
 ```
 const PC9685 = require('./PC9685')
 const pwm = new PC9685()
+
 
 ## Disclaimer
 This software is still experimental and have been not testsed yet. Please do not use.
