@@ -85,7 +85,7 @@ class PCA9685 {
         return this.frequency
     }
 
-    /**
+     /**
      * setter: frequency property
      */
     set frequency (freq) {
@@ -94,18 +94,20 @@ class PCA9685 {
         const prescaleVal = ((25000000.0 / 4096.0) / freq) -1.0
         const prescale = Math.floor(prescaleVal + 0.5)
 
-        try {
-            const oldMode = await this.#readByteData(_MODE1)
-            const newMode = (oldMode & 0x7F) | 0x10
+        (async () => { 
+            try {
+                const oldMode = await this.#readByteData(_MODE1)
+                const newMode = (oldMode & 0x7F) | 0x10
 
-            await this.#writeByteData(_MODE1, newMode)
-            await this.#writeByteData(_PRESCALE, parseInt(Math.floor(prescale)))
-            await this.#writeByteData(_MODE1, oldMode)
-            sleep(0.005)
-            await this.#writeByteData(_MODE1, oldMode | 0x80)
-        } catch (error) {
-            Throw (new Error(error))
-        }
+                await this.#writeByteData(_MODE1, newMode)
+                await this.#writeByteData(_PRESCALE, parseInt(Math.floor(prescale)))
+                await this.#writeByteData(_MODE1, oldMode)
+                sleep(0.005)
+                await this.#writeByteData(_MODE1, oldMode | 0x80)
+            } catch (error) {
+                Throw (new Error(error))
+            }
+        })()
     }
 
     /**
